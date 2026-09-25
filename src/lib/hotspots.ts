@@ -44,6 +44,6 @@ export function makeSimulatedHotspot(sequence: number): Hotspot {
     ["Dahej Chemical Estate", "Gujarat", 21.71, 72.59],
     ["Visakhapatnam Industrial Belt", "Andhra Pradesh", 17.69, 83.18],
   ] as const;
-  const site = sites[sequence % sites.length];
+  const site = sites[sequence % sites.length] ?? sites[0];
   return { id:`SIM-${26170+sequence}`, name:site[0], state:site[1], lat:site[2], lng:site[3], brightness:401.6, frp:34.9, detected:"just now", persistence:5.4, proximity:0.5, criticality:89, classification:"Industrial", confidence:92, probabilities:[92,5,3], risk:"Critical", score:89, status:"New", context:"Industrial land cover · OSM asset match", active:true };
 }
