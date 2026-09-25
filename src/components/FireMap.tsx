@@ -23,8 +23,8 @@ export default function FireMap({ events, selectedId, onSelect, compact = false 
     void import("leaflet").then((L) => {
       if (cancelled || !element) return;
       map = L.map(element, { zoomControl: false, attributionControl: true }).setView(compact ? [21.3, 78.7] : [22.2, 79.2], compact ? 4 : 5);
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-        attribution: "© OpenStreetMap © CARTO",
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
         maxZoom: 19,
       }).addTo(map);
       L.control.zoom({ position: "bottomright" }).addTo(map);
